@@ -1,0 +1,36 @@
+* how to run *
+bundle exec rspec rspec_example.rb  --tag integration1
+
+* start terminal and run *
+run irb:
+irb
+
+then include the utils:
+load './irb_utils.rb'
+
+
+* utilities *
+- highlight (:xpath, "//div")
+- highlight_element ($some_element)
+
+
+* resize window *
+$browser.manage.window.resize_to(480, 320)
+
+
+* other stuff *
+- http://aspyct.org/blog/2012/09/09/functional-web-testing-with-selenium-and-ruby/
+
+* goals with visibility of elements *
+- is element visible in the current viewport?
+- is element visible if user scrolls? (eg if the screen was big enough, would the element be visible?)
+
+- element is on the top or left of the browser (not scrollable)
+- element's CSS is not visible
+- border lines: half of the box is showing ... how much should be showing to make it be OK?
+
+- each test has red box around the relevant area when found.
+
+
+
+
