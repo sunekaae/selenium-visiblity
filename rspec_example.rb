@@ -234,7 +234,8 @@ describe "The test site for element visibility" do
   
   
   def get_local_url
-    File.join("file://", Dir.pwd, "public", "test.html")
+#    File.join("file://", Dir.pwd, "public", "test.html")
+    "http://selenium-visibility-heroku.herokuapp.com/test.html"
   end
   
     
