@@ -17,6 +17,11 @@ load './irb_utils.rb'
 * resize window *
 $browser.manage.window.resize_to(480, 320)
 
+* how to get current scroll *
+http://www.w3schools.com/jsref/prop_win_pagexoffset.asp
+window.pageXOffset and window.pageYOffset
+note: IE8 and earlier does not support this property, but may use "document.body.scrollLeft" and "document.body.scrollTop" instead
+
 
 * other stuff *
 - http://aspyct.org/blog/2012/09/09/functional-web-testing-with-selenium-and-ruby/
