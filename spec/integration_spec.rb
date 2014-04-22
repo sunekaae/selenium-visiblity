@@ -136,7 +136,7 @@ describe "The test site for element visibility" do
   end
 
 
-  it "will calculate size for browser", :unit => true do
+  it "will calculate size for browser", :integration => true do
     detemine_new_browser_size(800, 700, 1).should == 101
   end
 
