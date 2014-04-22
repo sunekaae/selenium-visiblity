@@ -13,8 +13,20 @@ test_url = nil # the url for the test page. init in before step.
  
 describe "The test site for element visibility" do
   before(:all) do
+    
+    
+    caps = Selenium::WebDriver::Remote::Capabilities.firefox
+    caps.version = "28"
+    caps.platform = 'Windows 7'
+    caps[:name] = "selenium visibility open source tests"
+
+    @driver = Selenium::WebDriver.for(
+      :remote,
+      :url => "http://s-visibility-sune:eea8faa5-d183-4381-9f58-7eacd0885999@ondemand.saucelabs.com:80/wd/hub",
+      :desired_capabilities => caps)
+    
     # set up our driver and wait instances
-    @driver = Selenium::WebDriver.for(:firefox)
+#    @driver = Selenium::WebDriver.for(:firefox)
     @wait = Selenium::WebDriver::Wait.new(:timeout => 10)
     test_url = get_local_url()
   end
@@ -128,7 +140,7 @@ describe "The test site for element visibility" do
     is_element_in_current_viewport?(@driver.find_element(:xpath, "//h2")).should == false
   end
 
-  it "marks the element as outside current viewport if way right on X coordinates", :integration1 => true do
+  it "marks the element as outside current viewport if way right on X coordinates", :integration => true do
     @driver.get test_url
     @driver.find_element(:xpath, "//h2").displayed?.should == true
     move_element_to_position(3000, nil)
